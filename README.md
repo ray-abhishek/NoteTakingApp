@@ -1,6 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## NOTE CREATION & MANAGEMENT WEB APP ( https://noteapp-flax.vercel.app/ )
+## NOTE CREATION & MANAGEMENT WEB APP 
+
+( https://noteapp-flax.vercel.app/ )
 
 #### Features : 
 
