@@ -9,6 +9,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Ability to add Notes
 - Ability to Archive, Pin & Delete Notes
 - Ability to Search
+- Persistent Storage using Client Browser's localStorage
 
 Before starting, please install dependencies by running: 
 
