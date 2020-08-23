@@ -1,0 +1,27 @@
+[
+    {
+        "title" : "Pending DS Algo",
+        "content" : "Complete the section of DP from EPI.",
+        "id" : "1212121"
+    },
+    {
+        "title" : "Revise Javascript Concepts",
+        "content" : "Inheritance, Event Delegation.",
+        "id" : "131313"
+    },
+    {
+        "title" : "Watch video on Event Loop",
+        "content" : "JS Conf Video on Event Loop - Loupe",
+        "id" : "141414"
+    },
+    {
+        "title" : "Buy Notebooks",
+        "content" : "Get A4 Size ruled notebook.",
+        "id" : "151515"
+    },
+    {
+        "title" : "Prepare notes on React",
+        "content" : "Focus on Context API, Stateful vs Stateless.",
+        "id" : "333333"
+    }
+]
