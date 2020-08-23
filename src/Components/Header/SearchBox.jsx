@@ -22,7 +22,7 @@ export default function SearchBox(){
     }
     return (
         <div style={container}>
-        <input type="text" value={searchValue} onChange={(e)=>handleChange(e)} style={inputStyle} placeholder="Enter Keyword...">
+        <input type="text" value={searchValue} onChange={(e)=>handleChange(e)} style={inputStyle} placeholder="S E A R C H">
 
         </input>
         {searchValue.length>0 && <FontAwesomeIcon icon={faTimes} style={closeIcon}  onClick={(e)=>handleClose(e)}/>}
@@ -46,7 +46,7 @@ const closeIcon = {
 }
 
 const inputStyle = {
-    fontSize : '1.3rem',
+    fontSize : '1rem',
     borderRadius : '10px',
     backgroundColor : 'rgb(17, 36, 56)',
     border : '0.8px solid',

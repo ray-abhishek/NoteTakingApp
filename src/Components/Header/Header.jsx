@@ -43,4 +43,5 @@ const buttonStyle = {
 
 const titleStyle = {
     marginLeft : '17px',
+    width : '100px',
 }

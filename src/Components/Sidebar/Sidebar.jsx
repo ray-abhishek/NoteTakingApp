@@ -43,9 +43,9 @@ const container = {
     backgroundColor : 'rgb(1, 50, 56)',
     maxWidth : '40%',
     padding : '20px',
-    borderTopRightRadius : '10%',
-    borderBottomRightRadius : '10%',
-    height : '80vh'
+    borderTopRightRadius : '10px',
+    borderBottomRightRadius : '10px',
+    height : '80vh',
 }
 
 const navItem = {
@@ -67,5 +67,7 @@ const showSidebar = {
     fontSize : '15px',
     marginTop : '0px',
     marginBottom : '0px',
-    display : 'block'
+    display : 'block',
+    width : '100px',
+    marginLeft : '20px',
 }

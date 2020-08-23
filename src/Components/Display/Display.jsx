@@ -59,4 +59,5 @@ const addButton = {
     backgroundColor : 'black',
     color : 'whitesmoke',
     fontSize : '1.2rem',
+    cursor : 'pointer',
 }

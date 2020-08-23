@@ -22,8 +22,15 @@ const Modal = ({ handleClose, show }) => {
         handleClose()
     }
 
+    const handleClick = (e) => {
+      console.log(e.target.className," is e.target")
+      if(e.target.className.includes("modal display")){
+        handleClose()
+      }
+    }
+
     return (
-      <div className={displayToggle}>
+      <div className={displayToggle} onClick={(e)=>{handleClick(e)}}>
         <section className="modal-main" style={{display:'flex',flexDirection:'column'}}>
                 <h3>Title</h3>
                 <input type="text" value={title} onChange={(e)=>setTitle(e.target.value)}>
