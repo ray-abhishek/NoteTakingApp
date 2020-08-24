@@ -13,7 +13,40 @@ section.container {
     overflow-wrap: break-word;
 }
 
+section.container > .btnContainer {
+    display : flex;
+    opacity : 0;
+    flex-direction : column;
+    position : absolute;
+    height : 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
 
+section.container > .btnContainer > button {
+    max-width: 60%;
+    margin: 50% auto 0 auto;
+    background-color : transparent;
+    color : white;
+    font-size : 20px;
+    font-weight : bolder;
+    border-radius : 15%;
+    cursor : pointer;
+}
+
+section.container > .btnContainer > button:hover {
+    color : rgb(16, 117, 104);
+    
+}
+
+section.container > .btnContainer:hover {
+    opacity : 0.8;
+    background-color:black;
+
+}
 
 section.container .options {
     display : flex;
@@ -28,12 +61,15 @@ section.container .options {
     z-index: 2;
 }
 
+
+
+
 section.container .options:hover {
     opacity : 0.8;
     background-color:black;
 }
 
-section.container button {
+section.container .options > button {
     color : white;
     background-color : transparent;
     outline : none;
@@ -45,7 +81,10 @@ section.container button {
     cursor : pointer;
 }
 
-section.container button:hover {
+
+
+
+section.container .options button:hover {
     color : rgb(16, 117, 104);
     opacity: 1 !important;
 }

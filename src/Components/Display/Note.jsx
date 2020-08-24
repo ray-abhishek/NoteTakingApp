@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { archiveItem, pinItem, deleteItem, unpinItem } from '../../Redux/action'
+import { archiveItem, pinItem, deleteItem, unpinItem, unarchiveItem } from '../../Redux/action'
 import Modal from './DisplayModal'
 import './Note.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -40,6 +40,10 @@ export default function Note({data, pinned, type}){
                 
                 <button onClick={(e)=>handleClick(e,deleteItem)}>Delete</button>
             </div>
+            <div className="btnContainer">
+            <button onClick={(e)=>handleClick(e,unarchiveItem)} style={type!=="Notes" ? {} : {display:'none'}}>UnArchive</button>
+            </div>
+            
         </section>
         
         </>

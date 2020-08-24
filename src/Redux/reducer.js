@@ -3,12 +3,11 @@ import {
     PIN_ITEM,
     UNPIN_ITEM,
     ARCHIVE_ITEM,
+    UNARCHIVE_ITEM,
     DELETE_ITEM,
     RESET_SEARCH_RESULTS,
     SET_MINIMIZED,
     SET_ACTIVE_TAB,
-    FETCH_NOTES,
-    FETCH_ARCHIVED,
     SEARCH_RESULTS,
     TOGGLE_MODAL
 } from './action'
@@ -66,7 +65,7 @@ export default function reducer( state = initialState , { type , payload }){
                 notes : newNotes
             }
         case ARCHIVE_ITEM:
-            let newArchivedNotes = [...state.archived, payload]
+            var newArchivedNotes = [...state.archived, payload]
             var newNotes = state.notes.filter(note => {
                 if(note["id"] === payload["id"])
                     return false
@@ -76,6 +75,19 @@ export default function reducer( state = initialState , { type , payload }){
             return {
                 ...state,
                 archived : newArchivedNotes,
+                notes : newNotes
+            }
+        case UNARCHIVE_ITEM:
+            var newNotes = [...state.notes, payload]
+            var updatedArchivedNotes = state.archived.filter(note => {
+                if(note["id"] === payload["id"])
+                    return false
+                else
+                    return true 
+            })
+            return {
+                ...state,
+                archived : updatedArchivedNotes,
                 notes : newNotes
             }
         case DELETE_ITEM:
@@ -89,18 +101,10 @@ export default function reducer( state = initialState , { type , payload }){
                 ...state,
                 notes : newNotes
             }
-        case FETCH_NOTES:
-            return {
-                ...state
-            }
         case SET_ACTIVE_TAB:
             return {
                 ...state,
                 activeTab : payload
-            }
-        case FETCH_ARCHIVED:
-            return {
-                ...state
             }
         case SET_MINIMIZED:
             return {
