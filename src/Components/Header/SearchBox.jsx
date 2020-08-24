@@ -39,7 +39,7 @@ const container = {
 const closeIcon = {
     position : 'absolute',
     zIndex : 2,
-    top : '10px',
+    top : '7px',
     right : '10px',
     color : 'white',
     cursor : 'pointer'

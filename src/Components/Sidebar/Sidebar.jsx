@@ -58,7 +58,7 @@ const hideSidebar = {
     fontSize : '15px',
     marginTop : '0px',
     marginBottom : '0px',
-    display : 'none'
+    display : 'none',
 }
 
 const showSidebar = {
