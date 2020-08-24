@@ -26,6 +26,8 @@ const Modal = ({ handleClose, show }) => {
           }
           dispatcher(createItem(payload))
           handleClose()
+          setTitle('')
+          setDescription('')
         }
     }
 
