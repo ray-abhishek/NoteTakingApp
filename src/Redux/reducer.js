@@ -9,7 +9,8 @@ import {
     SET_ACTIVE_TAB,
     FETCH_NOTES,
     FETCH_ARCHIVED,
-    SEARCH_RESULTS
+    SEARCH_RESULTS,
+    TOGGLE_MODAL
 } from './action'
 
 import notes from './sampleNotes.json'
@@ -24,6 +25,7 @@ const initialState = {
     searchResults : {"notes" : [], "archived" : []},
     showSearchResults : false,
     pinned : [],
+    showModal : true,
 }
 
 export default function reducer( state = initialState , { type , payload }){
@@ -128,6 +130,11 @@ export default function reducer( state = initialState , { type , payload }){
                 ...state,
                 searchResults : {"notes":[],"archived":[]},
                 showSearchResults : false
+            }
+        case TOGGLE_MODAL:
+            return {
+                ...state,
+                showModal : !state.showModal,
             }
         default : console.log("Default Reducer")
                   return state 

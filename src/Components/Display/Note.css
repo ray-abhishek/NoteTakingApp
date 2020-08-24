@@ -1,8 +1,8 @@
 section.container {
     display : flex;
     flex-direction : column;
-    max-width : 200px;
-    max-height : 300px;
+    width : 200px;
+    height : 200px;
     margin : 1rem;
     background-color : rgb(17, 36, 56);
     position: relative;
@@ -48,10 +48,8 @@ section.container button:hover {
     opacity: 1 !important;
 }
 
-/*
-
-
-
-
-
-*/
+section.container .pin {
+    position : absolute;
+    top : 15px;
+    right : 15px;
+}

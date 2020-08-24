@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchNotes, fetchArchived, setActiveTab } from '../../Redux/action'
+import { setActiveTab } from '../../Redux/action'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStickyNote } from '@fortawesome/free-regular-svg-icons'
 import { faArchive } from '@fortawesome/free-solid-svg-icons'
@@ -10,22 +10,21 @@ export default function Sidebar(){
     const { activeTab, minimized, showSearchResults, searchResults } = useSelector(state => state)
     const dispatcher = useDispatch()
 
-    const handleClick = (e,callback, tab) => {
-        console.log("Handling Tab Click")
+    const handleClick = (e, tab) => {
+
         dispatcher(setActiveTab(tab))
-        dispatcher(callback())
     }
 
     return (
         <>
         <ul style={container}>
-            <li style={navItem}  className={activeTab==="Notes" ? "active-tab" : ""} onClick={(e)=>handleClick(e,fetchNotes,"Notes")} >
+            <li style={navItem}  className={activeTab==="Notes" ? "active-tab" : ""} onClick={(e)=>handleClick(e,"Notes")} >
                 <FontAwesomeIcon icon={faStickyNote}/>
                 <h2 style={ minimized ? hideSidebar : showSidebar }>Notes
                 { showSearchResults && <span>({searchResults["notes"].length})</span>}
                 </h2>
             </li>
-            <li style={navItem}  className={activeTab!=="Notes" ? "active-tab" : ""} onClick={(e)=>handleClick(e,fetchArchived,"Archived")} >
+            <li style={navItem}  className={activeTab!=="Notes" ? "active-tab" : ""} onClick={(e)=>handleClick(e,"Archived")} >
                 <FontAwesomeIcon icon={faArchive}  />
                 <h2 style={ minimized ? hideSidebar : showSidebar }>Archived
                 { showSearchResults && <span>({searchResults["archived"].length})</span>}</h2>

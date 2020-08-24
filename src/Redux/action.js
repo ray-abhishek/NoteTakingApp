@@ -10,13 +10,15 @@ const ARCHIVE_ITEM = "ARCHIVE_ITEM"
 const PIN_ITEM = "PIN_ITEM"
 const UNPIN_ITEM = "UNPIN_ITEM"
 const DELETE_ITEM = "DELETE_ITEM"
+const TOGGLE_MODAL = "TOGGLE_MODAL"
 
-const toggleSidebar = () => {
-    console.log("HERE")
-    return {
-        type : SET_MINIMIZED
-    }
-}
+const toggleModal = () => ({
+    type : TOGGLE_MODAL
+})
+
+const toggleSidebar = () => ({
+    type : SET_MINIMIZED
+})
 
 const createItem = (payload) => ({
     type : CREATE_ITEM,
@@ -79,6 +81,8 @@ export {
     UNPIN_ITEM,
     ARCHIVE_ITEM,
     DELETE_ITEM,
+    TOGGLE_MODAL,
+    toggleModal,
     createItem,
     pinItem,
     unpinItem,

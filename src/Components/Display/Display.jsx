@@ -3,10 +3,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import Note from './Note'
 import Modal from './CreateModal'
 
+
 export default function Display(){
 
     const { activeTab, notes, archived, pinned, searchResults, showSearchResults } = useSelector(state => state)
-    const [ showModal , setShowModal ] = useState(false)
+    const [ showCreateModal , setShowModal ] = useState(false)
     var data = activeTab === "Notes" ? notes : archived
 
     if(showSearchResults == true){
@@ -16,8 +17,8 @@ export default function Display(){
     return (
         <div style={container}>
         <div style={createContainer}>
-            <button onClick={()=>setShowModal(true)}style={addButton}>ADD NOTE</button>
-            <Modal show={showModal} handleClose={()=>setShowModal(false)} add={true}/>
+            <button onClick={()=>setShowModal(true)} style={addButton}>ADD NOTE</button>
+            <Modal show={showCreateModal} handleClose={()=>setShowModal(false)} add={true}/>
         </div>
         <div style={noteContainer}>
             { 

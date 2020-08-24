@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import './Modal.css'
 import { createItem } from '../../Redux/action'
 import { useDispatch } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 const shortid = require('shortid');
 
 const Modal = ({ handleClose, show }) => {
@@ -13,17 +15,21 @@ const Modal = ({ handleClose, show }) => {
 
     const saveNote = (e) => {
         e.preventDefault()
-        const payload = {
+        if(title==="" || description===""){
+          alert("Field(s) cannot be empty")
+        }
+        else{
+          const payload = {
             "title" : title,
             "content" : description,
             "id" : shortid.generate(),
+          }
+          dispatcher(createItem(payload))
+          handleClose()
         }
-        dispatcher(createItem(payload))
-        handleClose()
     }
 
     const handleClick = (e) => {
-      console.log(e.target.className," is e.target")
       if(e.target.className.includes("modal display")){
         handleClose()
       }
@@ -32,6 +38,9 @@ const Modal = ({ handleClose, show }) => {
     return (
       <div className={displayToggle} onClick={(e)=>{handleClick(e)}}>
         <section className="modal-main" style={{display:'flex',flexDirection:'column'}}>
+          <FontAwesomeIcon icon={faTimes} style={closeIcon}  onClick={(e)=>{
+          handleClose()
+          e.stopPropagation()}}/>
                 <h3>Title</h3>
                 <input type="text" value={title} onChange={(e)=>setTitle(e.target.value)}>
                 </input>
@@ -46,3 +55,15 @@ const Modal = ({ handleClose, show }) => {
   };
 
 export default Modal
+
+
+const closeIcon = {
+  position : 'absolute',
+  zIndex : 2,
+  top : '10px',
+  right : '10px',
+  color : 'white',
+  cursor : 'pointer',
+  fontSize : '20px',
+  padding : '10px',
+}

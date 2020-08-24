@@ -1,11 +1,11 @@
 import React from 'react'
 import './Modal.css'
 
-const Modal = ({ handleClose, show , children, add }) => {
+
+const Modal = ({ handleClose, show , children }) => {
     const displayToggle = show ? "modal display-block" : "modal display-none";
     
     const handleClick = (e) => {
-      console.log(e.target.className," is e.target")
       if(e.target.className.includes("modal display")){
         handleClose()
       }
@@ -14,6 +14,7 @@ const Modal = ({ handleClose, show , children, add }) => {
     return (
       <div className={displayToggle} onClick={(e)=>{handleClick(e)}}>
         <section className="modal-main">
+        
           {children}
           <button onClick={handleClose}>Close</button>
         </section>
@@ -22,6 +23,5 @@ const Modal = ({ handleClose, show , children, add }) => {
   };
 
 export default Modal
-
 
 

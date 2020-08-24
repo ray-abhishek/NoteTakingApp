@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
-//import styles from './Note.module.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { archiveItem, pinItem, deleteItem, unpinItem } from '../../Redux/action'
 import Modal from './DisplayModal'
 import './Note.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faThumbtack } from '@fortawesome/free-solid-svg-icons'
+
 
 export default function Note({data, pinned, type}){
 
@@ -23,10 +25,10 @@ export default function Note({data, pinned, type}){
                 <h1>{title}</h1>
                 <p>{content}</p>
             </Modal>
-        <section className="container" onClick={()=>{console.log("Show Modal")
-                                                    setShowModal(true)}}>
+        <section className="container" onClick={()=>setShowModal(true)}>
             <h1>{title}</h1>
             <div>{content}</div>
+            {pinned && <FontAwesomeIcon icon={faThumbtack} className="pin"/>}
             <div className="options" style={type!=="Notes" ? {display:'none'} : {}}>
                 <button onClick={(e)=>handleClick(e,archiveItem)}>Archive</button>
                 {   
@@ -43,4 +45,5 @@ export default function Note({data, pinned, type}){
         </>
     )
 }
+
 
