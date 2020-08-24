@@ -10,8 +10,8 @@ export default function SearchBox(){
     const [ searchValue, setSearchValue ] = useState('')
 
     const dispatcher = useDispatch()
-    const handleChange = async (e) => {
-        await setSearchValue(e.target.value)
+    const handleChange = (e) => {
+        setSearchValue(e.target.value)
         dispatcher(getSearchResults(searchValue))
     }
 

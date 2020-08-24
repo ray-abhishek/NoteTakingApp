@@ -30,6 +30,7 @@ const Modal = ({ handleClose, show }) => {
     }
 
     const handleClick = (e) => {
+      // Close Modal if User Clicks on Area outside Modal which has the string 'modal display' in its classname.
       if(e.target.className.includes("modal display")){
         handleClose()
       }

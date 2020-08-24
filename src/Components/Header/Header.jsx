@@ -13,7 +13,6 @@ export default function Header(){
 
     const handleClick = (e) => {
         e.preventDefault()
-        console.log("Handling BARS Click")
         dispatcher(toggleSidebar())
     }
 

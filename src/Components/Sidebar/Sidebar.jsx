@@ -11,7 +11,6 @@ export default function Sidebar(){
     const dispatcher = useDispatch()
 
     const handleClick = (e, tab) => {
-
         dispatcher(setActiveTab(tab))
     }
 
